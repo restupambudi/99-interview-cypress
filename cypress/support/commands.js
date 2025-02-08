@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('handlePopup', () => {
+    cy.get('body').then(($body) => {
+      if ($body.find('#contentDiv').length > 0) {
+        cy.get('#contentDiv').find('.InterstitialClose').click();
+      }
+    });
+  });

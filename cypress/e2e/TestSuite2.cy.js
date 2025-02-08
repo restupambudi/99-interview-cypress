@@ -15,15 +15,32 @@ describe("Test Suite 2", () => {
     cy.visit("https://www.99.co/singapore");
   });
 
-  it("Test Case 1", () => {
+  it("The link should directs to Bloomsbury Residences", () => {
     //Write your automation script here for Test Case 1
+    cy.contains('Bloomsbury Residences').click();
+    cy.contains('Bloomsbury Residences').should('be.visible');
+    cy.url().should('include', '/bloomsbury-residences');
   });
 
-  it("Test Case 2", () => {
+  it("The link should directs to One Sophia / The Collective At One Sophia", () => {
     //Optional
+    cy.contains('One Sophia / The Collective At One Sophia').click();
+    cy.contains('One Sophia / The Collective At One Sophia').should('be.visible');
+    cy.url().should('include', '/one-sophia-the-collective-at-one-sophia');
   });
 
-  it("Test Case 3", () => {
+  it("The link should directs to Parktown Residence", () => {
     //Optional
+    cy.contains('Parktown Residence').click();
+    cy.contains('Parktown Residence').should('be.visible');
+    cy.url().should('include', '/parktown-residence');
   });
+
+  it("The link should directs to ELTA", () => {
+    //Optional
+    cy.contains('ELTA').click();
+    cy.contains('ELTA').should('be.visible');
+    cy.url().should('include', '/elta');
+  });
+
 });

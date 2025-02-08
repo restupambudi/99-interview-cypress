@@ -15,7 +15,7 @@ describe("Test Suite 1", () => {
     cy.visit("https://www.99.co/singapore");
   });
 
-  it("Test Case 1", () => {
+  it("Verify the home page", () => {
     //Write your automation script here for Test Case 1
     cy.contains('Featured projects').should('be.visible');
     cy.contains('Popular projects').should('be.visible');
