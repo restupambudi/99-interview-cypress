@@ -8,6 +8,11 @@
 describe("Test Suite 2", () => {
   beforeEach(() => {
     //Optional
+    Cypress.on('uncaught:exception', (err, runnable) => {
+      console.error('Uncaught exception:', err);
+      return false;
+    });
+    cy.visit("https://www.99.co/singapore");
   });
 
   it("Test Case 1", () => {
